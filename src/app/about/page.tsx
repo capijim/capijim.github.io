@@ -77,21 +77,13 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Row fillWidth s={{ direction: "column"}} horizontal="center">
+      <Column fillWidth horizontal="center">
         {about.avatar.display && (
           <Column
-            className={styles.avatar}
-            top="64"
-            fitHeight
-            position="sticky"
-            s={{ position: "relative", style: { top: "auto" } }}
-            xs={{ style: { top: "auto" } }}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
+            fillWidth
             horizontal="center"
+            paddingY="l"
+            gap="m"
           >
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
@@ -99,7 +91,7 @@ export default function About() {
               {person.location}
             </Row>
             {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
+              <Row wrap gap="8" horizontal="center">
                 {person.languages.map((language, index) => (
                   <Tag key={index} size="l">
                     {language}
@@ -109,7 +101,7 @@ export default function About() {
             )}
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column className={styles.blockAlign} maxWidth={40} fillWidth horizontal="center">
           <Column
             id={about.intro.title}
             fillWidth
@@ -336,7 +328,7 @@ export default function About() {
             </>
           )}
         </Column>
-      </Row>
+      </Column>
     </Column>
   );
 }
