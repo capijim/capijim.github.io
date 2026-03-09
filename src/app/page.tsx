@@ -73,17 +73,28 @@ export default function Home() {
             </Row>
           </RevealFx>
           <RevealFx translateY="8" delay={0.8} horizontal="center">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              About
-            </Button>
+            <Row gap="16" horizontal="center">
+              <Button
+                id="about"
+                data-border="rounded"
+                href={about.path}
+                variant="secondary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                About
+              </Button>
+              <Button
+                data-border="rounded"
+                href="/DangVinh_Resume.pdf"
+                variant="tertiary"
+                size="m"
+                weight="default"
+              >
+                <Icon name="file" size="s" /> View CV
+              </Button>
+            </Row>
           </RevealFx>
         </Column>
       </Column>
